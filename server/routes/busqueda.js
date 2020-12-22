@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const tvmaze=require("../services/tvmaze/tvmaze");
 const itunes=require("../services/itunes/itunes");
+const soapdemo=require("../services/soapdemo/soapdemo");
 app.get("/busqueda",async(req, res)=>{
     let criterio=req.query.criterio;
     if(criterio===undefined){
@@ -24,8 +25,9 @@ const getInfo = async(criterio) => {
     try {
         //const tvshows = await tvmaze.getTVShows(criterio)
         //return tvshows;
-        const multimedia=await itunes.getMultimedia(criterio);
-        return multimedia;
+        //const multimedia=await itunes.getMultimedia(criterio);
+        //return multimedia;
+        return soapdemo.getPersons(criterio).then(persons=>{return persons});
     } catch (e) {
         return `No se pudo hacer una busqueda`;
     }
