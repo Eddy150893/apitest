@@ -24,7 +24,7 @@ app.get("/busqueda",async(req, res)=>{
 const getInfo = async(criterio) => {
     let result={};
     try {
-        const persons=await soapdemo.getPersons(criterio).then(persons=>{return persons});
+        const persons=await soapdemo.getPersons(criterio).then(persons=>{if(persons!=null){return persons.SQL}});
         const tvshows = await tvmaze.getTVShows(criterio)
         const multimedia=await itunes.getMultimedia(criterio);
         result.soapdemo=persons;
