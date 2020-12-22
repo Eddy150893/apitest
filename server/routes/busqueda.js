@@ -29,7 +29,7 @@ const getInfo = async(criterio) => {
         const multimedia=await itunes.getMultimedia(criterio);
         result.soapdemo=persons;
         result.tvmaze=tvshows;
-        result.itunes=multimedia;
+        result.itunes=multimedia.results;
         return result;
     } catch (e) {
         return `No se pudo hacer una busqueda`;
