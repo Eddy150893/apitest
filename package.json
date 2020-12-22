@@ -1,0 +1,16 @@
+{
+  "name": "apitest",
+  "version": "1.0.0",
+  "description": "Api para centralizar servicios de busqueda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eddy Paz",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "express": "^4.17.1",
+    "soap": "^0.35.0"
+  }
+}
