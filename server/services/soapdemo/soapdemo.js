@@ -9,8 +9,9 @@ let getPersons=(busqueda)=>{
            if(err!==null){reject(`ha ocurrido un error en la busqueda  ${ err }`)}
             client.GetByNameAsync(args, function(err, result) {
                 if(err!==null){reject(`ha ocurrido un error en la busqueda  ${ err }`)}
-                if(result.GetByNameResult.diffgram.ListByName==null){
-                    resolve([]);    
+                if(result.GetByNameResult.diffgram.ListByName==null||result.GetByNameResult.diffgram.ListByName==undefined){
+                    const array=[];
+                    resolve(array);    
                 }
                 resolve(result.GetByNameResult.diffgram.ListByName);
             });
